@@ -81,12 +81,12 @@ let cards = [
         theme: 'none'
     },
     {
-        // icon: "youtube.svg",
+        icon: "youtube.svg",
         name: 'Youtube',
         label: true,
         link: 'https://youtube.com/',
         type: 'contain',
-        background: '#FF0000',
+        background: 'black',
         color: 'white',
         border: 'thick',
         theme: 'none'
