@@ -1,0 +1,44 @@
+:root {
+    --color-bg: #222;
+    --color-theme-1: #ff3e00;
+    --color-theme-2: #4075a6;
+    --color-fg: white;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+
+    /* Future(101): welcome message */
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center; */
+}
+
+
+/* Future(102): unused */
+/* h1,
+h2,
+p {
+    font-weight: 100;
+}
+
+a,
+a:hover {
+    color: var(--color-theme-1);
+    text-decoration: none;
+} */
+
+/* Future(101): welcome message */
+/* h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+} */

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Home</title>
+    <script src="./js/vue-3.4.21/vue.global.min.js"></script>
+    <!-- <script src="./js/vue-3.4.21/vue.global.prod.min.js"></script> -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/cards.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+
+        <main id="appContainer">
+            <template v-for="card in cards">
+                <a :href="card.link" target="_blank" :class="'appCard padding-'+card.border"
+                    :style="{ backgroundColor: card.background, color: card.color }">
+                    <template v-if="card.icon">
+                        <img :src="getImagePath(card.icon)" :alt="card.name" :class="'icon-'+card.theme"
+                            :style="{ objectFit: card.type }" />
+                    </template>
+                    <template v-if="card.label">
+                        <span>{{card.name}}</span>
+                    </template>
+                    <!-- <span :class="card.theme">{{card.name}}</span> -->
+                </a>
+            </template>
+        </main>
+    </div>
+
+    <script src="./js/cards.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
