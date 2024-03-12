@@ -30,11 +30,12 @@
                         <img :src="getImagePath(card.icon)" :alt="card.name" :class="'icon-'+card.theme"
                             :style="{ objectFit: card.type }" />
                     </template>
-                    <template v-if="card.label">
+                    <template v-else-if="card.label">
                         <span>{{card.name}}</span>
                     </template>
-                    <!-- ToDo(101): card text -->
-                    <!-- <span :class="card.theme">{{card.name}}</span> -->
+                    <template v-else>
+                        <span>Unknown</span>
+                    </template>
                 </a>
             </template>
         </main>
