@@ -12,29 +12,22 @@
 
 body {
     font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
     background-color: var(--color-bg);
     color: var(--color-fg);
 
-    /* Future(101): welcome message */
-    /* display: flex;
-    flex-direction: column;
+    display: flex;
     min-height: 100vh;
-    justify-content: center; */
+    align-items: center;
+    justify-content: center;
 }
 
-
-/* Future(102): unused */
-/* h1,
-h2,
-p {
-    font-weight: 100;
-}
 
 a,
 a:hover {
     color: var(--color-theme-1);
     text-decoration: none;
-} */
+}
 
 /* Future(101): welcome message */
 /* h1 {
