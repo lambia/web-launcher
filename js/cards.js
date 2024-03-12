@@ -1,124 +1,228 @@
+let urlBase = "./icons";
+
 let cards = [
+    // {
+    //     tile: {
+    //         backgroundColor: "#000000",
+    //         color: "#FFFFFF",
+    //         href: "link",
+    //         class: "card-padding-thick"
+    //     },
+    //     img: {
+    //         src: `${urlBase}/icona.svg`,
+    //         class: "card-img-contain card-img-light"
+    //     },
+    //     text: {
+    //         name: "nome",
+    //         class: "text-n"
+    //     },
+    //     // icon: {
+    //     //     class: "fa-solid fa-home text-3"
+    //     // }
+    // }
     {
-        icon: "apple-tv.svg",
-        name: 'Apple TV',
-        link: 'https://tv.apple.com/it',
-        type: 'contain',
-        background: 'black',
-        color: 'white',
-        border: 'thick',
-        theme: 'light'
+        tile: {
+            style: {
+                backgroundColor: "#000000",
+                color: "#FFFFFF",
+            },
+            href: "https://tv.apple.com/it",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/apple-tv.svg`,
+            class: "card-img-contain card-img-light"
+        },
+        text: {
+            name: "Apple TV"
+        },
     },
     {
-        icon: "crunchyroll.svg",
-        name: 'Crunchyroll',
-        link: 'https://crunchyroll.com/it/',
-        type: 'contain',
-        background: '#F47521',
-        color: 'white',
-        border: 'thick',
-        theme: 'light'
+        tile: {
+            style: {
+                backgroundColor: "#F47521",
+                color: "#FFFFFF",
+            },
+            href: "https://crunchyroll.com/it/",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/crunchyroll.svg`,
+            class: "card-img-contain card-img-light"
+        },
+        text: {
+            name: "Crunchyroll"
+        },
     },
     {
-        icon: "disney-plus.svg",
-        name: 'Disney+',
-        link: 'https://www.disneyplus.com/it-it/home',
-        type: 'contain',
-        background: 'white', //#113ccf
-        color: 'white',
-        border: 'thick',
-        theme: 'none' //light
+        tile: {
+            style: {
+                backgroundColor: "#FFFFFF",
+                color: "#113CCF",
+            },
+            href: "https://www.disneyplus.com/it-it/home",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/disney-plus.svg`,
+            class: "card-img-contain"
+        },
+        text: {
+            name: "Disney+"
+        },
     },
     {
-        icon: "netflix.svg",
-        name: 'Netflix',
-        link: 'https://netflix.com/',
-        type: 'contain',
-        background: 'black', //#E50914
-        color: 'white',
-        border: 'thick',
-        theme: 'none'
+        tile: {
+            style: {
+                backgroundColor: "#000000",
+                color: "#FFFFFF",
+            },
+            href: "https://netflix.com/",  //#E50914
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/netflix.svg`,
+            class: "card-img-contain"
+        },
+        text: {
+            name: "Netflix"
+        },
     },
     {
-        icon: "now-tv.svg",
-        name: 'Now TV',
-        link: 'https://www.nowtv.it/',
-        type: 'contain',
-        background: '#00818A',
-        color: 'white',
-        border: 'thick',
-        theme: 'light'
+        tile: {
+            style: {
+                backgroundColor: "#00818A",
+                color: "#FFFFFF",
+            },
+            href: "https://www.nowtv.it/",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/now-tv.svg`,
+            class: "card-img-contain card-img-light"
+        },
+        text: {
+            name: "Now TV"
+        },
     },
     {
-        icon: "prime-video.svg",
-        name: 'Prime Video',
-        link: 'https://www.primevideo.com/',
-        type: 'contain',
-        background: '#00A8E1',
-        color: 'white',
-        border: 'thick',
-        theme: 'light'
+        tile: {
+            style: {
+                backgroundColor: "#00A8E1",
+                color: "#FFFFFF",
+            },
+            href: "https://www.primevideo.com/",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/prime-video.svg`,
+            class: "card-img-contain card-img-light"
+        },
+        text: {
+            name: "Prime Video"
+        },
     },
     {
-        icon: "spotify.svg",
-        name: 'Spotify',
-        link: 'https://open.spotify.com/',
-        type: 'contain',
-        background: '#1DB954',
-        color: 'white',
-        border: 'thick',
-        theme: 'dark'
+        tile: {
+            style: {
+                backgroundColor: "#1DB954",
+                color: "#FFFFFF",
+            },
+            href: "https://open.spotify.com/",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/spotify.svg`,
+            class: "card-img-contain card-img-dark"
+        },
+        text: {
+            name: "Spotify"
+        },
     },
     {
-        // icon: "vlc.svg",
-        name: 'VLC',
-        label: true,
-        link: 'https://www.videolan.org/vlc/',
-        type: 'contain',
-        background: '#E85E00',
-        color: 'white',
-        border: 'thick',
-        theme: 'none'
+        tile: {
+            style: {
+                backgroundColor: "#000000",
+                color: "#FFFFFF",
+            },
+            href: "https://youtube.com/",
+            class: "card-padding-thick"
+        },
+        img: {
+            src: `${urlBase}/youtube.svg`,
+            class: "card-img-contain"
+        },
+        text: {
+            name: "Youtube"
+        },
     },
     {
-        icon: "youtube.svg",
-        name: 'Youtube',
-        label: true,
-        link: 'https://youtube.com/',
-        type: 'contain',
-        background: 'black',
-        color: 'white',
-        border: 'thick',
-        theme: 'none'
+        tile: {
+            style: {
+                backgroundColor: "#E85E00",
+                color: "#FFFFFF",
+            },
+            href: "https://www.videolan.org/vlc/",
+            class: "card-padding-thick"
+        },
+        // img: {
+        //     src: `${urlBase}/vlc.svg`,
+        //     class: "card-img-contain"
+        // },
+        text: {
+            name: "VLC",
+            class: "text-7"
+        },
+        icon: {
+            class: "fa-solid fa-circle-play text-9"
+        }
     },
     {
-        icon: "placeholder.svg",
-        name: 'placeholder',
-        link: '',
-        type: 'cover',
-        background: 'orangered',
-        color: 'white',
-        border: 'none',
-        theme: 'none'
+        tile: {
+            style: {
+                backgroundColor: "#000000",
+                color: "#FFFFFF",
+            },
+            href: "link"
+        },
+        img: {
+            src: `${urlBase}/placeholder.svg`,
+            class: "card-img-cover"
+        },
+        text: {
+            name: "Placeholder"
+        },
     },
     {
-        icon: "placeholder.svg",
-        name: 'placeholder',
-        link: '',
-        type: 'cover',
-        background: 'orange',
-        color: 'white',
-        border: 'none',
-        theme: 'none'
+        tile: {
+            style: {
+                backgroundColor: "#000000",
+                color: "#FFFFFF",
+            },
+            href: "link"
+        },
+        text: {
+            name: "Settings",
+            class: "text-4"
+        },
+        icon: {
+            class: "fa-solid fa-gear text-7"
+        }
     },
     {
-        icon: "placeholder.svg",
-        name: 'placeholder',
-        link: '',
-        type: 'cover',
-        background: 'rebeccapurple',
-        color: 'white',
-        border: 'thin',
-        theme: 'none'
-    }
+        tile: {
+            style: {
+                backgroundColor: "#000000",
+                color: "#FFFFFF",
+            },
+            href: "link"
+        },
+        text: {
+            name: "Shutdown",
+            class: "text-4"
+        },
+        icon: {
+            class: "fa-solid fa-power-off text-7"
+        }
+    },
 ];

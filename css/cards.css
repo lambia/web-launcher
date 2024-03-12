@@ -14,10 +14,11 @@
     aspect-ratio: 16/9;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     /* override dagli oggetti */
     background-color: teal;
     color: white;
-    position: relative;
     overflow: hidden;
 }
 
@@ -28,12 +29,19 @@
 }
 
 .appCard span {
-    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 2vw;
+    font-size: 2rem;
+}
+
+.appCard span>label {
+    cursor: pointer;
     font-weight: 300;
+}
+
+.appCard span>i,
+.appCard span>label {
+    padding: 0 0.3rem;
 }
 
 /* ToDo(102): card hover */
@@ -47,26 +55,26 @@
     padding: 1rem 2rem;
 } */
 
-.padding-none {
-    padding: 0;
-}
-
-.padding-thin {
+.card-padding-thin {
     padding: 0.5rem;
 }
 
-.padding-thick {
+.card-padding-thick {
     padding: 2rem 3rem;
 }
 
-.icon-none {
-    filter: unset;
+.card-img-cover {
+    object-fit: cover;
 }
 
-.icon-light {
+.card-img-contain {
+    object-fit: contain;
+}
+
+.card-img-light {
     filter: brightness(0) invert(1);
 }
 
-.icon-dark {
+.card-img-dark {
     filter: brightness(0);
 }
