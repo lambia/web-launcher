@@ -19,7 +19,8 @@
 
 <body>
     <div id="app">
-        <h1>{{ message }}</h1>
+        <!-- Future(101): welcome message -->
+        <!-- <h1>{{ message }}</h1> -->
 
         <main id="appContainer">
             <template v-for="card in cards">
@@ -32,6 +33,7 @@
                     <template v-if="card.label">
                         <span>{{card.name}}</span>
                     </template>
+                    <!-- ToDo(101): card text -->
                     <!-- <span :class="card.theme">{{card.name}}</span> -->
                 </a>
             </template>
