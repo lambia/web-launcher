@@ -6,6 +6,7 @@ createApp({
         return {
             cards,
             lang,
+            searchstring: "",
             results: [],
             apiUrl: "https://api.themoviedb.org/3",
             imageUrl: "https://image.tmdb.org/t/p/w500/",
@@ -87,23 +88,28 @@ createApp({
         }
     },
     methods: {
-        searchChange($event) {
-            if ($event.target.value.length >= 3) {
-                this.search($event.target.value);
-            } else {
-                this.results = [];
+        search() {
+            this.results = [];
+
+            if (this.searchstring.length >= 3) {
+                fetch(`${this.apiUrl}/search/multi?query=${encodeURIComponent(this.searchstring)}&include_adult=true&language=it-IT&page=1&region=it-IT`, this.options)
+                    .then(r => r.json())
+                    .then(r => {
+                        this.results = r.results.filter(item => item.media_type !== "person"); //filtra le "person"
+                        this.getProviders();
+                    }).catch(err => {
+                        console.error(err)
+                    });
             }
         },
-        search(string) {
-            fetch(`${this.apiUrl}/search/movie?query=${encodeURIComponent(string)}&include_adult=true&language=it-IT&page=1&region=it-IT`, this.options)
-                .then(r => r.json())
-                .then(r => { this.results = r.results; this.getProviders(); })
-                .catch(err => { this.results = []; console.error(err) });
+        clear() {
+            this.results = [];
+            this.searchstring = "";
         },
         getProviders() {
 
             this.results.forEach((element, i) => {
-                fetch(`${this.apiUrl}/movie/${element.id}/watch/providers`, this.options)
+                fetch(`${this.apiUrl}/${element.media_type}/${element.id}/watch/providers`, this.options)
                     .then(r => r.json())
                     .then(r => { this.results[i].providers = this.filterProviders(r.results.IT); });
             });

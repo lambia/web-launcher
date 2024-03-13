@@ -39,15 +39,29 @@ body {
 }
 
 .appSearchBar>input {
-    width: 100%;
+    width: calc(100% - 3rem);
+}
+
+.appSearchBar>.clear {
+    width: 3rem;
+}
+
+.appSearchBar>input,
+.appSearchBar>.clear {
     background: none;
     font-size: 2rem;
     color: white;
     padding: 0.4rem;
     border: none;
     border-bottom: solid 3px #666;
+    outline: none;
 }
 
+.clear {
+    cursor: pointer;
+}
+
+.appSearchBar>.clear:focus,
 .appSearchBar>input:focus {
     outline: none;
     border: none;

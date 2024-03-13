@@ -25,20 +25,25 @@
 
         <div id="appContainer">
             <header class="appSearchBar">
-                <input type="text" placeholder="Search..." @input="searchChange">
+                <input type="text" placeholder="Search..." @input="search" v-model="searchstring"
+                    :style="{ width: searchstring ? '' : '100%' }">
+                <button v-if="searchstring" class="clear" @click="clear"><i
+                        class="fa-solid fa-delete-left"></i></button>
             </header>
             <main v-if="results.length" class="appCardGrid">
                 <div v-for="item in results" class="movieCard">
-                    <img v-if="item.poster_path" :src="imageUrl+item.poster_path" :alt="item.name"
+                    <img v-if="item.poster_path" :src="imageUrl+item.poster_path" :alt="item.title"
                         class="card-img-cover" />
                     <div class="card-img-overlay">
                         <div class="info">
-                            <time v-if="item.release_date">{{parseDate(item.release_date)}}</time>
+                            <time v-if="item.media_type == 'movie'">{{parseDate(item.release_date)}}</time>
+                            <time v-else-if="item.media_type == 'tv'">{{parseDate(item.first_air_date)}}</time>
                             <small v-if="item.vote_average">
                                 <i v-for="i in 5"
                                     :class="{ 'fa-solid fa-star': (i-0.5) < parseStars(item.vote_average), 'fa-regular fa-star-half-stroke': (i-0.5) == parseStars(item.vote_average),  'fa-regular fa-star' : (i-0.5) > parseStars(item.vote_average) }"></i>
                             </small>
-                            <label>{{item.id}} {{item.title}}</label>
+                            <label v-if="item.media_type == 'movie'">{{ item.title}}</label>
+                            <label v-else-if="item.media_type == 'tv'">{{ item.name}}</label>
                             <p v-if="item.overview">{{parseDescription(item.overview, 256)}}</p>
                         </div>
 
