@@ -23,9 +23,36 @@
         <!-- Future(101): welcome message -->
         <!-- <h1>{{ message }}</h1> -->
 
-        <main id="appContainer">
-            <template v-for="card in cards">
-                <a v-bind="card.tile" target="_blank" class="appCard">
+        <div id="appContainer">
+            <header class="appSearchBar">
+                <input type="text" placeholder="Search..." @input="searchChange">
+            </header>
+            <main v-if="results.length" class="appCardGrid">
+                <div v-for="item in results" class="movieCard">
+                    <img v-if="item.poster_path" :src="imageUrl+item.poster_path" :alt="item.name"
+                        class="card-img-cover" />
+                    <div class="card-img-overlay">
+                        <div class="info">
+                            <time v-if="item.release_date">{{parseDate(item.release_date)}}</time>
+                            <small v-if="item.vote_average">
+                                <i v-for="i in 5"
+                                    :class="{ 'fa-solid fa-star': (i-0.5) < parseStars(item.vote_average), 'fa-regular fa-star-half-stroke': (i-0.5) == parseStars(item.vote_average),  'fa-regular fa-star' : (i-0.5) > parseStars(item.vote_average) }"></i>
+                            </small>
+                            <label>{{item.id}} {{item.title}}</label>
+                            <p v-if="item.overview">{{parseDescription(item.overview, 256)}}</p>
+                        </div>
+
+                        <div class="providers" v-if="item.providers && item.providers.flatrate">
+                            <a v-for="service in item.providers.flatrate" :href="item.providers.link"
+                                class="provider-icon">
+                                <img :src="imageUrl + service.logo_path" :alt="service.provider_name" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <main v-else class="appCardGrid">
+                <a v-for="card in cards" v-bind="card.tile" class="appCard">
                     <img v-if="card.img" v-bind="card.img" :alt="card.text?.name" />
                     <span v-else-if="card.text?.name || card.icon?.class">
                         <i v-bind="card.icon"></i>
@@ -33,8 +60,8 @@
                     </span>
                     <span v-else>Unknown</span>
                 </a>
-            </template>
-        </main>
+            </main>
+        </div>
     </div>
 
     <script src="./js/cards.js"></script>

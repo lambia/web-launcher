@@ -27,6 +27,39 @@ body {
     width: 100%;
 }
 
+#appContainer {
+    width: 100%;
+    max-width: 80vw;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.appSearchBar {
+    padding: 1rem 0;
+}
+
+.appSearchBar>input {
+    width: 100%;
+    background: none;
+    font-size: 2rem;
+    color: white;
+    padding: 0.4rem;
+    border: none;
+    border-bottom: solid 3px #666;
+}
+
+.appSearchBar>input:focus {
+    outline: none;
+    border: none;
+    border-bottom: solid 3px white;
+}
+
+.appCardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
 
 a,
 a:hover {

@@ -1,13 +1,25 @@
 # Funzionalità
 [x] struttura dati
-[ ] searchbar
-[ ] history
+[x] searchbar base
+[x] movies
+[x] providers
+[x] parse year, stars, descr.len
+[x] fix providers async order
+[x] providers filter
+[.] tv show
+[.] link base: in base a id servizio, rimanda alla sua pagina di search
+[ ] link medio: trova modo per autorizzare il passaggio del bearer (estensione?) così faccio le chiamate dirette
+[ ] link advanced: trakt, justwatch o simile
+[ ] history (scrubble in iframe)
 [ ] launch external command (VLC, shutdown, steam, cambio utente) -> php resident rootkit o chrome extension?
 [ ] webstorage: icons, order, theme, search history?
 [ ] navbar (se ci sono altre funzioni)
 [ ] ordering
+[ ] x-ray musica e attori?
 
 # Stile / UI
+[.] movie cards -> lista?
+[ ] unisci movie cards e app cards
 [ ] layout flessibile in base al numero cards
 [ ] navigazione tabindex da arrowkeys
 [ ] card con box-shadow e gradiente overlay
