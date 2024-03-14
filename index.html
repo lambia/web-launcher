@@ -32,8 +32,12 @@
             </header>
             <main v-if="results.length" class="appCardGrid">
                 <div v-for="item in results" class="movieCard">
-                    <img v-if="item.poster_path" :src="imageUrl+item.poster_path" :alt="item.title"
-                        class="card-img-cover" />
+                    <template v-if="item.poster_path">
+                        <img v-if="item.media_type == 'movie'" :src="imageUrl+item.poster_path" :alt="item.title"
+                            class="card-img-cover" />
+                        <img v-else-if="item.media_type == 'tv'" :src="imageUrl+item.poster_path" :alt="item.name"
+                            class="card-img-cover" />
+                    </template>
                     <div class="card-img-overlay">
                         <div class="info">
                             <time v-if="item.media_type == 'movie'">{{parseDate(item.release_date)}}</time>
@@ -48,10 +52,18 @@
                         </div>
 
                         <div class="providers" v-if="item.providers && item.providers.flatrate">
-                            <a v-for="service in item.providers.flatrate" :href="item.providers.link"
-                                class="provider-icon">
-                                <img :src="imageUrl + service.logo_path" :alt="service.provider_name" />
-                            </a>
+                            <template v-if="item.media_type == 'movie'">
+                                <a v-for="service in item.providers.flatrate" :href="parseUrl(service.url, item.title)"
+                                    class="provider-icon">
+                                    <img :src="service.logo_path" :alt="service.provider_name" />
+                                </a>
+                            </template>
+                            <template v-if="item.media_type == 'tv'">
+                                <a v-for="service in item.providers.flatrate" :href="parseUrl(service.url, item.name)"
+                                    class="provider-icon">
+                                    <img :src="service.logo_path" :alt="service.provider_name" />
+                                </a>
+                            </template>
                         </div>
                     </div>
                 </div>

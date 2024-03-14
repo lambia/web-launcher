@@ -18,6 +18,32 @@
     background-color: teal;
     color: white;
     overflow: hidden;
+    box-shadow: 0.25rem 0.25rem 0.5rem 0 #00000099;
+    border: solid 5px transparent;
+    outline: solid 1px black;
+    outline-offset: -1px;
+}
+
+.appCard:focus,
+.appCard:hover {
+    /* border: solid 4px #FFF; */
+    /* outline: solid 1px #FFF;
+    outline-offset: -1px; */
+}
+
+.appCard img,
+.appCard span {
+    /*out*/
+    transition: all 200ms;
+}
+
+.appCard:focus img,
+.appCard:focus span,
+.appCard:hover img,
+.appCard:hover span {
+    /*in*/
+    transition: all 200ms;
+    transform: scale(1.15);
 }
 
 .movieCard img,
@@ -37,12 +63,13 @@
 .movieCard .providers {
     display: flex;
     flex-direction: row;
-    height: 6.8rem;
+    height: 5.5rem;
     gap: 0.4rem;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: self-end;
     width: 100%;
+    margin-bottom: 0.4rem;
 }
 
 .movieCard .providers a {
@@ -62,7 +89,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.1);
     text-align: center;
     font-weight: 400;
     font-size: 1.2rem;
@@ -71,8 +98,17 @@
     justify-content: space-between;
 }
 
+.movieCard:focus-within .card-img-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.movieCard:focus-within .info {
+    opacity: 1;
+}
+
 .card-img-overlay .info {
     display: flex;
+    opacity: 0;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -131,7 +167,7 @@
 }
 
 .card-padding-thick {
-    padding: 2rem 3rem;
+    padding: 3rem;
 }
 
 .card-img-cover {

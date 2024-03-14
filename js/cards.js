@@ -5,7 +5,7 @@ let cards = [
     //     tile: {
     //         backgroundColor: "#000000",
     //         color: "#FFFFFF",
-    //         href: "link",
+    //         href: "#",
     //         class: "card-padding-thick"
     //     },
     //     img: {
@@ -57,15 +57,15 @@ let cards = [
     {
         tile: {
             style: {
-                backgroundColor: "#FFFFFF",
-                color: "#113CCF",
+                backgroundColor: "#020C6F", //020C3F -> 020C6F
+                color: "#FFFFFF",
             },
             href: "https://www.disneyplus.com/it-it/home",
             class: "card-padding-thick"
         },
         img: {
             src: `${urlBase}/disney-plus.svg`,
-            class: "card-img-contain"
+            class: "card-img-contain card-img-light"
         },
         text: {
             name: "Disney+"
@@ -74,10 +74,10 @@ let cards = [
     {
         tile: {
             style: {
-                backgroundColor: "#000000",
+                backgroundColor: "#000000", //#E50914
                 color: "#FFFFFF",
             },
-            href: "https://netflix.com/",  //#E50914
+            href: "https://netflix.com/",
             class: "card-padding-thick"
         },
         img: {
@@ -133,7 +133,7 @@ let cards = [
         },
         img: {
             src: `${urlBase}/spotify.svg`,
-            class: "card-img-contain card-img-dark"
+            class: "card-img-contain card-img-light"
         },
         text: {
             name: "Spotify"
@@ -142,7 +142,7 @@ let cards = [
     {
         tile: {
             style: {
-                backgroundColor: "#000000",
+                backgroundColor: "#FF0000",
                 color: "#FFFFFF",
             },
             href: "https://youtube.com/",
@@ -180,18 +180,22 @@ let cards = [
     {
         tile: {
             style: {
-                backgroundColor: "#000000",
-                color: "#FFFFFF",
+                backgroundColor: "#FFFFFF",
+                color: "#000000",
             },
-            href: "link"
+            href: "https://www.google.it",
+            class: "card-padding-thick"
         },
         img: {
-            src: `${urlBase}/placeholder.svg`,
-            class: "card-img-cover"
+            src: `${urlBase}/google.svg`,
+            class: "card-img-contain"
         },
         text: {
-            name: "Placeholder"
+            name: "Google"
         },
+        // icon: {
+        //     class: "fa-brands fa-google text-7"
+        // }
     },
     {
         tile: {
@@ -199,7 +203,7 @@ let cards = [
                 backgroundColor: "#000000",
                 color: "#FFFFFF",
             },
-            href: "link"
+            href: "#"
         },
         text: {
             name: "Settings",
@@ -215,7 +219,7 @@ let cards = [
                 backgroundColor: "#000000",
                 color: "#FFFFFF",
             },
-            href: "link"
+            href: "#"
         },
         text: {
             name: "Shutdown",
