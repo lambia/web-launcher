@@ -16,10 +16,11 @@
     justify-content: center;
     /* override dagli oggetti */
     background-color: teal;
+    /* background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 30%); */
     color: white;
     overflow: hidden;
     box-shadow: 0.25rem 0.25rem 0.5rem 0 #00000099;
-    border: solid 5px transparent;
+    /* border: solid 5px transparent; */
     outline: solid 1px black;
     outline-offset: -1px;
 }
@@ -89,7 +90,8 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.9) 100%);
     text-align: center;
     font-weight: 400;
     font-size: 1.2rem;
@@ -98,17 +100,23 @@
     justify-content: space-between;
 }
 
+.movieCard:hover .card-img-overlay,
 .movieCard:focus-within .card-img-overlay {
     background: rgba(0, 0, 0, 0.8);
 }
 
-.movieCard:focus-within .info {
+.card-img-overlay {
+    opacity: 0;
+}
+
+.movieCard:hover .card-img-overlay,
+.movieCard:focus-within .card-img-overlay {
+    /* altero solo opacity così da poter selezionare tramite tab-index */
     opacity: 1;
 }
 
 .card-img-overlay .info {
     display: flex;
-    opacity: 0;
     flex-direction: column;
     justify-content: flex-start;
 }

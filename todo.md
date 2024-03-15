@@ -7,13 +7,13 @@
 [x] fix providers async order
 [x] providers filter
 [x] tv show
-[.] link base: in base a id servizio, rimanda alla sua pagina di search
-[ ] fix getProviders con debouncer o interrupt
-[ ] link medio: trova modo per autorizzare il passaggio del bearer (estensione?) così faccio le chiamate dirette
-[ ] link advanced: trakt, justwatch o simile
-[ ] aggiungi streaming community/google a tutti?
-[ ] aggiungi alla ricerca youtube e spotify creando interfaccia generica
-[ ] a questo punto cerca direttamente su tutte le piattaforme tramite api
+[x] link base: in base a id servizio, rimanda alla sua pagina di search
+[x] fix getProviders con debouncer o interrupt
+[x] aggiungi streaming community/google a tutti?
+[.] link medio: trova modo per autorizzare il passaggio del bearer (estensione?) così faccio le chiamate dirette
+[.] link advanced: trakt, justwatch o simile
+[.] aggiungi alla ricerca youtube e spotify creando interfaccia generica
+[.] a questo punto cerca direttamente su tutte le piattaforme tramite api
 [ ] history (scrubble in iframe)
 [ ] launch external command (VLC, shutdown, steam, cambio utente) -> php resident rootkit o chrome extension?
 [ ] webstorage: icons, order, theme, search history?
