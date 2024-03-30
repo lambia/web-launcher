@@ -48,7 +48,7 @@
                             </small>
                             <label v-if="item.media_type == 'movie'">{{ item.title}}</label>
                             <label v-else-if="item.media_type == 'tv'">{{ item.name}}</label>
-                            <p v-if="item.overview">{{parseDescription(item.overview, 256)}}</p>
+                            <p v-if="item.overview">{{parseDescription(item.overview, 384)}}</p>
                         </div>
 
                         <div class="providers" v-if="item.providers && item.providers.flatrate">
