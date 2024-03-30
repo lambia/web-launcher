@@ -162,7 +162,7 @@ let cards = [
                 backgroundColor: "#E85E00",
                 color: "#FFFFFF",
             },
-            href: "https://www.videolan.org/vlc/",
+            href: "javascript:alert('Still work in progress');",
             class: "card-padding-thick"
         },
         // img: {
@@ -203,7 +203,7 @@ let cards = [
                 backgroundColor: "#000000",
                 color: "#FFFFFF",
             },
-            href: "#"
+            href: "javascript:alert('Still work in progress');"
         },
         text: {
             name: "Settings",
@@ -219,7 +219,7 @@ let cards = [
                 backgroundColor: "#000000",
                 color: "#FFFFFF",
             },
-            href: "#"
+            href: "javascript:alert('Still work in progress');"
         },
         text: {
             name: "Shutdown",
