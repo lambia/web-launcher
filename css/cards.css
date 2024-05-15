@@ -8,7 +8,6 @@
 }
 
 .appCard {
-    width: calc(100% / 4 - 0.75rem);
     aspect-ratio: 16/9;
     display: flex;
     flex-direction: row;
@@ -22,7 +21,7 @@
     box-shadow: 0.25rem 0.25rem 0.5rem 0 #00000099;
     /* border: solid 5px transparent; */
     outline: solid 1px black;
-    outline-offset: -1px;
+    outline-offset: 0px;
 }
 
 .appCard:focus,

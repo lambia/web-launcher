@@ -69,10 +69,9 @@ body {
 }
 
 .appCardGrid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
     gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 }
 
 a,
