@@ -1,5 +1,4 @@
 .movieCard {
-    width: calc(100% / 5 - 0.8rem);
     aspect-ratio: 9/16;
     background-color: #555;
     color: white;
