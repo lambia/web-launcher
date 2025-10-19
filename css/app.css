@@ -34,10 +34,6 @@ body {
     margin: 0 auto;
 }
 
-.appSearchBar {
-    padding: 1rem 0;
-}
-
 .appSearchBar>input {
     width: calc(100% - 3rem);
 }
@@ -69,6 +65,7 @@ body {
 }
 
 .appCardGrid {
+    margin: 1rem 0;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));

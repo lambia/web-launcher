@@ -22,8 +22,8 @@ createApp({
             //     .then(response => response.json())
             //     .then(response => { x = response; })
             availableProviders: [
-                { condition: "empty", provide_name: "Streaming Community", url: "https://streamingcommunity.report/search?q=%query%", logo_path: "https://streamingcommunity.report/img/logo.png" },
-                { condition: "never", provide_name: "Google", url: "https://www.google.com/search?q=%query%+streaming", logo_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/240px-Google_%22G%22_logo.svg.png" },
+                { condition: "always", provide_name: "Streaming Unity", url: "https://streamingunity.co/search?q=%query%", logo_path: "https://streamingunity.co/img/logo.png" },
+                { condition: "empty", provide_name: "Google", url: "https://www.google.com/search?q=dove+guardare+%query%", logo_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/240px-Google_%22G%22_logo.svg.png" },
                 { provider_id: 337, provider_name: "Disney Plus", url: "https://www.google.com/search?q=%query%+site:disneyplus.com" },
                 { provider_id: 8, provider_name: "Netflix", url: "https://www.netflix.com/search?q=%query%" },
                 { provider_id: 2, provider_name: "Apple TV", url: "https://tv.apple.com/search?term=%query%" },
@@ -34,7 +34,7 @@ createApp({
                 { provider_id: 188, provider_name: "YouTube Premium", url: "https://www.youtube.com/results?search_query=%query%" },
                 { provider_id: 68, provider_name: "Microsoft Store", url: "https://www.microsoft.com/it-it/search/shop/movies?q=%query%" },
                 { provider_id: 119, provider_name: "Amazon Prime Video", url: "https://www.primevideo.com/-/it/search/ref=atv_nb_sug?phrase=%query%" },
-                { provider_id: 10, provider_name: "Amazon Video", url: "https://www.primevideo.com/-/it/search/ref=atv_nb_sug?phrase=%query%" },
+                { provider_id: 10, provider_name: "Amazon Video Fallback?", url: "https://www.primevideo.com/-/it/search/ref=atv_nb_sug?phrase=%query%" },
                 { provider_id: 531, provider_name: "Paramount Plus", url: "https://www.primevideo.com/-/it/search/ref=atv_nb_sug?phrase=%query%" },
                 { provider_id: 582, provider_name: "Paramount+ Amazon Channel", url: "https://www.primevideo.com/-/it/search/ref=atv_nb_sug?phrase=%query%" },
                 { provider_id: 584, provider_name: "Discovery+ Amazon Channel", url: "https://www.primevideo.com/-/it/search/ref=atv_nb_sug?phrase=%query%" },
@@ -142,6 +142,7 @@ createApp({
                     result.flatrate = flatrate;
                 }
 
+                // ToDo: riabilitare con opzione?
                 // if (providers.rent) {
                 //     let rent = providers.rent.filter(provider => {
                 //         return this.availableProviders.includes(provider.provider_id);
@@ -155,12 +156,16 @@ createApp({
                 //     result.buy = buy;
                 // }
             }
+            
+            //Always
+            result.flatrate.push(...this.availableProviders.filter(x => x.condition == "always"));
 
             //Fallback
-            if (!result.flatrate.length) {
-                result.flatrate = this.availableProviders.filter(x => x.condition == "empty");
-                // result.flatrate.push(...this.availableProviders.filter(x => x.condition == "empty"));
+            if (result.flatrate.length == 1) {
+                // result.flatrate = this.availableProviders.filter(x => x.condition == "empty");
+                result.flatrate.push(...this.availableProviders.filter(x => x.condition == "empty"));
             }
+
 
             return result;
         },

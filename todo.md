@@ -14,8 +14,9 @@
 [.] link advanced: trakt, justwatch o simile
 [.] aggiungi alla ricerca youtube e spotify creando interfaccia generica
 [.] a questo punto cerca direttamente su tutte le piattaforme tramite api
+[ ] integrazioni node.js su macchina (spegni, avvio app)
 [ ] history (scrubble in iframe)
-[ ] launch external command (VLC, shutdown, steam, cambio utente) -> php resident rootkit o chrome extension?
+[ ] launch external command (VLC, shutdown, steam, cambio utente) -> node.js resident rootkit
 [ ] webstorage: icons, order, theme, search history?
 [ ] navbar (se ci sono altre funzioni)
 [ ] ordering

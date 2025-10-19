@@ -26,8 +26,12 @@
 .appCard:focus,
 .appCard:hover {
     /* border: solid 4px #FFF; */
-    /* outline: solid 1px #FFF;
-    outline-offset: -1px; */
+    outline: solid 4px;
+    outline-offset: -4px;
+}
+
+.appCard img {
+    transform: scale(0.85);
 }
 
 .appCard img,
@@ -42,7 +46,7 @@
 .appCard:hover span {
     /*in*/
     transition: all 200ms;
-    transform: scale(1.15);
+    transform: scale(1);
 }
 
 .movieCard img,
@@ -80,6 +84,11 @@
 .movieCard .provider-icon {
     border-radius: 50%;
     overflow: hidden;
+}
+
+.movieCard .provider-icon:focus {
+    outline: none;
+    border: solid 2px white;
 }
 
 .card-img-overlay {
@@ -169,7 +178,7 @@
 } */
 
 .card-padding-thin {
-    padding: 0.5rem;
+    padding: 1rem 2rem;
 }
 
 .card-padding-thick {
