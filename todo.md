@@ -36,6 +36,8 @@
 [ ] in mancanza di immagine mostra testo
 [ ] logo + testo
 [ ] cards video
+[ ] aggiungere spinner loader?
+[ ] valutare debouncing per ricerca
 
 # Codice
 [ ] check se valori di default oggetti sono ok

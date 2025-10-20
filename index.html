@@ -25,7 +25,7 @@
 
         <div id="appContainer">
             <header class="appSearchBar">
-                <input type="text" placeholder="Search..." @input="search" v-model="searchstring"
+                <input type="text" placeholder="Search..." @change="search" v-model="searchstring"
                     :style="{ width: searchstring ? '' : '100%' }">
                 <button v-if="searchstring" class="clear" @click="clear"><i
                         class="fa-solid fa-delete-left"></i></button>
